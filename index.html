@@ -1,28 +1,91 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Graph Example</title>
+    <title>My Page</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
+            margin: 0;
+            padding: 0;
         }
-        h1 {
-            color: #333;
+        .container {
+            text-align: center;
         }
-        #graph-container {
-            width: 500px;
-            height: 300px;
-            border: 1px solid #ccc;
+        .title {
+            font-size: 32px;
+            margin-top: 50px;
+        }
+        .subtitle {
+            font-size: 18px;
+            margin-top: 10px;
+            color: gray;
+        }
+        .toolbar {
+            background-color: #333;
+            padding: 10px 0;
+        }
+        .tab {
+            display: inline-block;
+            margin: 0 10px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .content {
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .hidden {
+            display: none;
         }
     </style>
 </head>
 <body>
-    <h1>Welcome to the Graph Example</h1>
-    <p>This is some sample text.</p>
-    <div id="graph-container">
-        <canvas id="graph"></canvas>
+    <div class="container">
+        <h1 class="title">My Name</h1>
+        <p class="subtitle">Software Engineer</p>
     </div>
-    <script src="script.js"></script>
+
+    <div class="toolbar">
+        <div class="tab" onclick="showContent('content1')">Option 1</div>
+        <div class="tab" onclick="showContent('content2')">Option 2</div>
+        <div class="tab" onclick="showContent('content3')">Option 3</div>
+        <div class="tab" onclick="showContent('content4')">Option 4</div>
+        <div class="tab" onclick="showContent('content5')">Option 5</div>
+    </div>
+
+    <div class="content" id="content1">
+        Content for Option 1
+    </div>
+
+    <div class="content hidden" id="content2">
+        Content for Option 2
+    </div>
+
+    <div class="content hidden" id="content3">
+        Content for Option 3
+    </div>
+
+    <div class="content hidden" id="content4">
+        Content for Option 4
+    </div>
+
+    <div class="content hidden" id="content5">
+        Content for Option 5
+    </div>
+
+    <script>
+        function showContent(contentId) {
+            // Hide all content divs
+            var contentDivs = document.getElementsByClassName('content');
+            for (var i = 0; i < contentDivs.length; i++) {
+                contentDivs[i].classList.add('hidden');
+            }
+
+            // Show the selected content div
+            var selectedContent = document.getElementById(contentId);
+            selectedContent.classList.remove('hidden');
+        }
+    </script>
 </body>
 </html>
