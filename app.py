@@ -17,5 +17,11 @@ app.layout = html.Div(
     ]
 )
 
+# Generate the static HTML file
+app.css.config.serve_locally = True
+app.scripts.config.serve_locally = True
+
 if __name__ == "__main__":
     app.run_server(debug=True)
+    # Export the app to a static HTML file
+    app.export("index.html", validate=False)
