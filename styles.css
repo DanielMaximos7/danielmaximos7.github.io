@@ -2,31 +2,32 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-}
-
-.container {
+  }
+  
+  .container {
     text-align: center;
-}
-
-.title {
+    margin-bottom: 20px;
+  }
+  
+  .title {
     font-size: 32px;
     margin-top: 50px;
-}
-
-.subtitle {
+  }
+  
+  .subtitle {
     font-size: 18px;
     margin-top: 10px;
     color: gray;
-}
-
-.toolbar {
+  }
+  
+  .toolbar {
     background-color: #333;
     padding: 10px 0;
     display: flex;
     justify-content: space-evenly;
-}
-
-.tab {
+  }
+  
+  .tab {
     display: inline-block;
     margin: 0 10px;
     color: white;
@@ -36,18 +37,23 @@ body {
     padding: 5px 10px;
     border-radius: 4px;
     transition: background-color 0.3s ease;
-}
-
-.tab:hover {
+  }
+  
+  .tab:hover {
     background-color: #555;
-}
-
-.content {
+  }
+  
+  .tab.active {
+    background-color: #777;
+  }
+  
+  .content {
     display: none;
     padding: 20px;
     background-color: #f5f5f5;
-}
-
-.show {
+  }
+  
+  .show {
     display: block;
-}
+  }
+  
