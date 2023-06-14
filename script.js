@@ -13,10 +13,8 @@ function drawGraph() {
     var graphElement = document.getElementById('graph');
     var data = generateData();
 
-    // Use a charting library (e.g., Chart.js) to draw the graph
-    // Here's a basic example using Chart.js
-    var ctx = graphElement.getContext('2d');
-    new Chart(ctx, {
+    // Use Chart.js to draw the graph
+    new Chart(graphElement, {
         type: 'bar',
         data: {
             labels: ['Label 1', 'Label 2', 'Label 3', 'Label 4', 'Label 5', 'Label 6', 'Label 7', 'Label 8', 'Label 9', 'Label 10'],
