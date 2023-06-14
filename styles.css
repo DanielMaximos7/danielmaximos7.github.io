@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+.title {
+    font-size: 32px;
+    margin-top: 50px;
+}
+
+.subtitle {
+    font-size: 18px;
+    margin-top: 10px;
+    color: gray;
+}
+
+.toolbar {
+    background-color: #333;
+    padding: 10px 0;
+}
+
+.tab {
+    display: inline-block;
+    margin: 0 10px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.content {
+    display: none;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.show {
+    display: block;
+}

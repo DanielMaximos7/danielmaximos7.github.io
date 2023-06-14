@@ -2,43 +2,7 @@
 <html>
 <head>
     <title>My Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            text-align: center;
-        }
-        .title {
-            font-size: 32px;
-            margin-top: 50px;
-        }
-        .subtitle {
-            font-size: 18px;
-            margin-top: 10px;
-            color: gray;
-        }
-        .toolbar {
-            background-color: #333;
-            padding: 10px 0;
-        }
-        .tab {
-            display: inline-block;
-            margin: 0 10px;
-            color: white;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        .content {
-            padding: 20px;
-            background-color: #f5f5f5;
-        }
-        .hidden {
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
@@ -47,45 +11,33 @@
     </div>
 
     <div class="toolbar">
-        <div class="tab" onclick="showContent('content1')">Option 1</div>
-        <div class="tab" onclick="showContent('content2')">Option 2</div>
-        <div class="tab" onclick="showContent('content3')">Option 3</div>
-        <div class="tab" onclick="showContent('content4')">Option 4</div>
-        <div class="tab" onclick="showContent('content5')">Option 5</div>
+        <a href="#content1" class="tab">Option 1</a>
+        <a href="#content2" class="tab">Option 2</a>
+        <a href="#content3" class="tab">Option 3</a>
+        <a href="#content4" class="tab">Option 4</a>
+        <a href="#content5" class="tab">Option 5</a>
     </div>
 
-    <div class="content" id="content1">
+    <div id="content1" class="content">
         Content for Option 1
     </div>
 
-    <div class="content hidden" id="content2">
+    <div id="content2" class="content">
         Content for Option 2
     </div>
 
-    <div class="content hidden" id="content3">
+    <div id="content3" class="content">
         Content for Option 3
     </div>
 
-    <div class="content hidden" id="content4">
+    <div id="content4" class="content">
         Content for Option 4
     </div>
 
-    <div class="content hidden" id="content5">
+    <div id="content5" class="content">
         Content for Option 5
     </div>
 
-    <script>
-        function showContent(contentId) {
-            // Hide all content divs
-            var contentDivs = document.getElementsByClassName('content');
-            for (var i = 0; i < contentDivs.length; i++) {
-                contentDivs[i].classList.add('hidden');
-            }
-
-            // Show the selected content div
-            var selectedContent = document.getElementById(contentId);
-            selectedContent.classList.remove('hidden');
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
