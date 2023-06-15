@@ -15,7 +15,7 @@ body {
     padding: 10px;
     box-sizing: border-box;
     text-align: center;
-    margin-bottom: 20px;
+    z-index: 1; /* Add a higher z-index to ensure it appears above the navbar */
   }
   
   .title {
@@ -152,4 +152,16 @@ body {
   .slide-content {
     text-align: center;
     font-size: 14px;
+  }
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 2; /* Add a higher z-index to ensure it appears above the container */
   }
