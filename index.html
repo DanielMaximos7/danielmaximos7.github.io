@@ -69,16 +69,6 @@
       to {opacity: 1;}
     }
 
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: -250px;
-      width: 250px;
-      height: 100%;
-      background-color: #333;
-      padding-top: 50px;
-      transition: left 0.3s ease;
-    }
 
     .navbar.open {
       left: 0;
@@ -101,16 +91,16 @@
   </style>
 </head>
 <body>
-    <div class="navbar" id="navbar">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="Education.html">Education</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="shop.html">Shop</a></li>
-          <li><a href="support.html">Support</a></li>
-          <li><a href="contact.html">Contact us</a></li>
-        </ul>
-    </div>
+  <div class="navbar" id="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Education.html">Education</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="contact.html">Contact us</a></li>
+    </ul>
+  </div>
 
   <div class="container">
     <h1 class="title">Name</h1>
@@ -118,35 +108,37 @@
     <button class="menu-button" onclick="toggleNavbar()">Menu</button>
   </div>
 
-  <div class="slideshow-container">
-    <div class="mySlides fade">
-      <div class="slide-content">
-        <p>Content for Slide 1</p>
+  <div class="main-page-container">
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <div class="slide-content">
+          <p>Content for Slide 1</p>
+        </div>
       </div>
-    </div>
 
-    <div class="mySlides fade">
-      <div class="slide-content">
-        <p>Content for Slide 2</p>
+      <div class="mySlides fade">
+        <div class="slide-content">
+          <p>Content for Slide 2</p>
+        </div>
       </div>
-    </div>
 
-    <div class="mySlides fade">
-      <h2 class="slide-title">Slide 3</h2>
-      <div class="slide-content">
-        <p>Content for Slide 3</p>
+      <div class="mySlides fade">
+        <h2 class="slide-title">Slide 3</h2>
+        <div class="slide-content">
+          <p>Content for Slide 3</p>
+        </div>
       </div>
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
+    <br>
 
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-  </div>
-  <br>
-
-  <div style="text-align:center">
-    <span class="dot" onclick="currentSlide(1)"></span>
-    <span class="dot" onclick="currentSlide(2)"></span>
-    <span class="dot" onclick="currentSlide(3)"></span>
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
   </div>
 
   <script>
