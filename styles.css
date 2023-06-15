@@ -64,13 +64,6 @@ body {
     display: block;
   }
   
-  .slideshow {
-    width: 100%;
-    height: 50vh;
-    position: relative;
-    overflow: hidden;
-  }
-  
   .slide {
     display: none;
     position: absolute;
@@ -91,12 +84,6 @@ body {
     box-sizing: border-box;
   }
   
-  /* Slideshow container */
-  .slideshow-container {
-    max-width: 1000px;
-    position: relative;
-    margin: auto;
-  }
   
   /* Hide the images by default */
   .mySlides {
