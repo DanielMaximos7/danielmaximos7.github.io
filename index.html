@@ -101,7 +101,10 @@
     
   
   .container {
-    position: fixed;
+    position: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     top: 0;
     left: 0;
     width: 100%;
@@ -129,12 +132,11 @@
     .container3 {
     background-color: black;
     height: 300px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    flex: 1;
+    width: 100%;
     z-index: 2;
-}
+    }
+
 
   </style>
 </head>
@@ -150,13 +152,14 @@
     </ul>
   </div>
 
-  <div class="container3"></div>
+ 
 
   <div class="container">
     <div class="container2">
       <h1 class="title">Name</h1>
       <p class="subtitle">Software Engineer</p>
     </div>
+    <div class="container3"></div>
     <button class="menu-button" onclick="toggleNavbar()">Menu</button>
   </div>
 
