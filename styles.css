@@ -151,4 +151,14 @@ body {
     height: 15px;
     width: 15px;
     margin: 0 2px
+  }
+
+  .slide-title {
+    text-align: center;
+  }
+  
+  .slide-content {
+    text-align: center;
+    font-size: 14px;
+  }
   
