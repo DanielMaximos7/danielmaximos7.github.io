@@ -11,7 +11,7 @@
 
     .parallax-section {
       position: relative;
-      height: 1250px;
+      height: 500px;
       overflow: hidden;
       background-image: url("egypt.jpeg"); /* Replace with your image file path */
       background-position: center;
@@ -31,12 +31,64 @@
     .content-section {
       background-color: #f5f5f5;
       padding: 40px;
+      margin-top: 200px; /* Increase the margin value as needed */
     }
 
     .content {
       max-width: 800px;
       margin: 0 auto;
       text-align: center;
+    }
+
+    /* Slideshow */
+    .slideshow-container {
+      position: relative;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
+    .slideshow-container .slide {
+      display: none;
+    }
+
+    /* Navigation arrows */
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: auto;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      cursor: pointer;
+      background-color: rgba(0, 0, 0, 0.5);
+      transition: background-color 0.3s;
+    }
+
+    .prev:hover, .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Slide indicators (dots) */
+    .dot-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin: 0 4px;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .dot.active {
+      background-color: rgba(0, 0, 0, 0.8);
     }
   </style>
 </head>
@@ -54,15 +106,57 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed placerat ligula eu metus aliquet ultricies. Curabitur laoreet facilisis libero, in scelerisque lorem fringilla id. Sed semper placerat enim, et posuere orci rhoncus nec.</p>
       <p>Nullam a pellentesque lectus. Nulla pharetra iaculis massa non fringilla. Proin sed commodo nibh. Quisque sagittis lorem libero, at suscipit nulla lobortis nec. Curabitur sed elementum est.</p>
       <p>Donec non neque non libero varius eleifend eu vel lorem. Sed a nisl et ligula accumsan lacinia. Duis rutrum est nec cursus egestas. Pellentesque efficitur nisl eu turpis pharetra, in feugiat ante scelerisque.</p>
+
+      <!-- Slideshow -->
+      <div class="slideshow-container">
+        <div class="slide">
+        </div>
+        <div class="slide">
+        </div>
+        <div class="slide">
+        </div>
+
+        <!-- Navigation arrows -->
+        <a class="prev">&#10094;</a>
+        <a class="next">&#10095;</a>
+      </div>
+
+      <!-- Slide indicators (dots) -->
+      <div class="dot-container">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
     </div>
   </div>
 
   <script>
-    window.addEventListener("scroll", function() {
-      var parallaxSection = document.querySelector(".parallax-section");
-      var yPos = -window.pageYOffset / 2;
-      parallaxSection.style.backgroundPositionY = yPos + "px";
-    });
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      var slides = document.getElementsByClassName("slide");
+      var dots = document.getElementsByClassName("dot");
+
+      for (var i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+
+      slideIndex++;
+
+      if (slideIndex > slides.length) {
+        slideIndex = 1;
+      }
+
+      for (var i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+
+      setTimeout(showSlides, 3000);
+    }
   </script>
 </body>
 </html>
