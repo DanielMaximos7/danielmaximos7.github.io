@@ -1,22 +1,4 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f2f5; 
-  }
-  
-  .container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #f1f1f1;
-    border-bottom: 1px solid black;
-    padding: 10px;
-    box-sizing: border-box;
-    text-align: center;
-    z-index: 1; /* Add a higher z-index to ensure it appears above the navbar */
-  }
+
   
   .title {
     font-size: 32px;
