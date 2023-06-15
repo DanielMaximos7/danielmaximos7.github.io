@@ -102,16 +102,16 @@
   </style>
 </head>
 <body>
-  <div class="navbar" id="navbar">
-    <ul>
-      <li><a href="#" onclick="toggleNavbar(event)">Home</a></li>
-      <li><a href="#" onclick="toggleNavbar(event)">Categories</a></li>
-      <li><a href="#" onclick="toggleNavbar(event)">Services</a></li>
-      <li><a href="#" onclick="toggleNavbar(event)">Shop</a></li>
-      <li><a href="#" onclick="toggleNavbar(event)">Support</a></li>
-      <li><a href="#" onclick="toggleNavbar(event)">Contact us</a></li>
-    </ul>
-  </div>
+    <div class="navbar" id="navbar">
+        <ul>
+          <li><a href="#" onclick="toggleNavbar(this)">Home</a></li>
+          <li><a href="#" onclick="toggleNavbar(this)">Categories</a></li>
+          <li><a href="#" onclick="toggleNavbar(this)">Services</a></li>
+          <li><a href="#" onclick="toggleNavbar(this)">Shop</a></li>
+          <li><a href="#" onclick="toggleNavbar(this)">Support</a></li>
+          <li><a href="#" onclick="toggleNavbar(this)">Contact us</a></li>
+        </ul>
+      </div>
 
   <div class="container">
     <h1 class="title">Name</h1>
@@ -185,21 +185,28 @@
       }
     }
   </script>
-  <script>
+ <script>
     document.addEventListener('DOMContentLoaded', function() {
       var homeNavItem = document.querySelector('#navbar li:first-child a');
       homeNavItem.classList.add('active');
-      toggleNavbar({ target: homeNavItem });
+      toggleNavbar(homeNavItem);
     });
   
-    function toggleNavbar(event) {
+    function toggleNavbar(clickedItem) {
       var navbarItems = document.querySelectorAll('#navbar li a');
+      var slideshow = document.querySelector('.slideshow');
   
       navbarItems.forEach(function(item) {
         item.classList.remove('active');
       });
   
-      event.target.classList.add('active');
+      clickedItem.classList.add('active');
+  
+      if (clickedItem.innerHTML === 'Home') {
+        slideshow.style.display = 'none';
+      } else {
+        slideshow.style.display = 'block';
+      }
     }
   </script>
 </body>
