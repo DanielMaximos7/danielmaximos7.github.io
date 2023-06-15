@@ -69,9 +69,14 @@
       to {opacity: 1;}
     }
 
-
-    .navbar.open {
+    .navbar {
+      position: absolute;
+      top: 0;
       left: 0;
+      background-color: #333;
+      width: 100%;
+      padding: 10px 0;
+      z-index: 1;
     }
 
     .navbar ul {
@@ -87,6 +92,10 @@
     .navbar ul li a {
       color: #fff;
       text-decoration: none;
+    }
+
+    .navbar.open {
+      left: -200px;
     }
   </style>
 </head>
@@ -144,15 +153,15 @@
   <script>
     let slideIndex = 1;
     showSlides(slideIndex);
-  
+
     function plusSlides(n) {
       showSlides(slideIndex += n);
     }
-  
+
     function currentSlide(n) {
       showSlides(slideIndex = n);
     }
-  
+
     function showSlides(n) {
       let i;
       let slides = document.getElementsByClassName("mySlides");
@@ -168,7 +177,7 @@
       slides[slideIndex - 1].style.display = "block";
       dots[slideIndex - 1].className += " active";
     }
-  
+
     function toggleNavbar() {
       const navbar = document.getElementById('navbar');
       if (navbar) {
