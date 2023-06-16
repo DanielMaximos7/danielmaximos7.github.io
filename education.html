@@ -175,14 +175,19 @@
       showSlides(slideIndex += n);
     }
 
-    // Parallax effect
-    window.addEventListener("scroll", function() {
-      var parallaxSection = document.querySelector(".parallax-section");
-      var scrollTop = window.pageYOffset;
-      var parallaxEffect = scrollTop * 0.4; // Adjust the parallax effect speed here
+// Parallax effect
+window.addEventListener("DOMContentLoaded", function() {
+  var parallaxSection = document.querySelector(".parallax-section");
+  var parallaxEffect = 0; // Initial parallax effect position
 
-      parallaxSection.style.backgroundPositionY = parallaxEffect + "px";
-    });
+  window.addEventListener("scroll", function() {
+    var scrollTop = window.pageYOffset;
+    parallaxEffect = scrollTop * 0.4; // Adjust the parallax effect speed here
+
+    parallaxSection.style.backgroundPositionY = (parallaxEffect * -1) + "px";
+  });
+});
+
   </script>
 </body>
 </html>
