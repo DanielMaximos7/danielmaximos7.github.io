@@ -43,25 +43,29 @@
   margin: 0 auto;
   text-align: center;
   position: relative;
-  display: flex;
-  align-items: center;
+}
+
+.left-image,
+.right-image {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 150px; /* Adjust the width of the left and right images */
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
 }
 
 .left-image {
-  flex: 1;
-  height: 100%;
+  left: 0;
   background-image: url("pillar.png"); /* Replace with your left image file path */
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .right-image {
-  flex: 1;
-  height: 100%;
+  right: 0;
   background-image: url("pillar.png"); /* Replace with your right image file path */
-  background-repeat: no-repeat;
-  background-size: cover;
 }
+
 
 
     /* Slide indicators (dots) */
