@@ -46,26 +46,29 @@
     }
 
     .left-image {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 150px; /* Adjust the width of the left image */
-      height: 100%;
-      background-image: url("pillar.png"); /* Replace with your left image file path */
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150px; /* Adjust the width of the left image */
+  height: 100%;
+  background-image: url("pillar.png"); /* Replace with your left image file path */
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1; /* Add this line to position the image above the content */
+}
 
-    .right-image {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 150px; /* Adjust the width of the right image */
-      height: 100%;
-      background-image: url("pillar.png"); /* Replace with your right image file path */
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
+.right-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px; /* Adjust the width of the right image */
+  height: 100%;
+  background-image: url("pillar.png"); /* Replace with your right image file path */
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1; /* Add this line to position the image above the content */
+}
+
 
     /* Slide indicators (dots) */
     .dot-container {
