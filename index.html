@@ -96,7 +96,7 @@
   </style>
 </head>
 <body>
-  <div class="parallax-section">
+  <div class="parallax-section" >
     <div class="parallax-content">
       <h1>Welcome to the Parallax Website</h1>
       <p>Scroll down to see the parallax effect</p>
@@ -188,7 +188,7 @@
 // Parallax effect
 window.addEventListener("DOMContentLoaded", function() {
   var parallaxSection = document.querySelector(".parallax-section");
-  var parallaxEffect = 0; // Initial parallax effect position
+  var parallaxEffect = -100; // Initial parallax effect position
 
   window.addEventListener("scroll", function() {
     var scrollTop = window.pageYOffset;
