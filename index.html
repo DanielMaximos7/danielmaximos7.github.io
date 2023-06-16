@@ -42,9 +42,32 @@
       max-width: 800px;
       margin: 0 auto;
       text-align: center;
-      background-image: url("pillar.png"); /* Replace with your image file path */
+      background-image: url("your-image.jpg"); /* Replace with your image file path */
       background-repeat: repeat-y;
       background-size: auto 100%;
+      position: relative;
+    }
+
+    .left-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 150px; /* Adjust the width of the left image */
+      height: 100%;
+      background-image: url("left-image.jpg"); /* Replace with your left image file path */
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .right-image {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 150px; /* Adjust the width of the right image */
+      height: 100%;
+      background-image: url("right-image.jpg"); /* Replace with your right image file path */
+      background-repeat: no-repeat;
+      background-size: cover;
     }
 
     /* Slide indicators (dots) */
@@ -78,6 +101,8 @@
 
   <div class="content-section">
     <div class="content">
+      <div class="left-image"></div>
+      <div class="right-image"></div>
       <h2>About Us</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ac metus nec lacus congue faucibus. Morbi consectetur leo in tellus tempus pharetra. Nam non enim lectus. Sed efficitur quam vitae lorem convallis, ut tincidunt nulla sagittis. Nam bibendum erat nec tortor interdum congue. Aliquam vulputate velit id metus pharetra, id aliquam enim pellentesque.</p>
       <p>Sed fermentum quam libero, a finibus lorem condimentum a. Donec sed bibendum nisl. Morbi lacinia enim at arcu iaculis, id efficitur velit facilisis. Nam id tellus sit amet libero consectetur pellentesque. Pellentesque cursus tincidunt metus nec suscipit. Aliquam non tellus vitae sapien posuere euismod. Sed hendrerit purus et felis tristique, nec lacinia libero laoreet. Donec bibendum orci sit amet neque scelerisque, vitae interdum dolor tempus. Donec gravida est eget posuere laoreet. Donec ornare efficitur sapien nec pellentesque. Cras vehicula eu lectus vitae dictum. Ut accumsan ante nunc, in tincidunt felis bibendum at. Pellentesque et ipsum mauris. Aliquam varius quam et eros pellentesque, id dapibus quam sagittis.</p>
