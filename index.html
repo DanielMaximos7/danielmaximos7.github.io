@@ -39,35 +39,30 @@
     }
 
     .content {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-      position: relative;
-    }
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
 
-    .left-image {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 150px; /* Adjust the width of the left image */
-      height: 100%;
-      background-image: url("pillar.png"); /* Replace with your left image file path */
-      background-repeat: no-repeat;
-      background-size: cover;
-      z-index: 1; /* Add this line to position the image above the content */
-    }
+.left-image {
+  flex: 1;
+  height: 100%;
+  background-image: url("pillar.png"); /* Replace with your left image file path */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
-    .right-image {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 150px; /* Adjust the width of the right image */
-      height: 100%;
-      background-image: url("pillar.png"); /* Replace with your right image file path */
-      background-repeat: no-repeat;
-      background-size: cover;
-      z-index: 1; /* Add this line to position the image above the content */
-    }
+.right-image {
+  flex: 1;
+  height: 100%;
+  background-image: url("pillar.png"); /* Replace with your right image file path */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 
     /* Slide indicators (dots) */
     .dot-container {
@@ -99,10 +94,10 @@
   </div>
 
   <div class="content-section">
-    <div class="left-image"></div>
-    <div class="right-image"></div>
     <div class="content">
-      <h2>About Us</h2>
+      <div class="left-image"></div>
+        <h2>About Us</h2>
+      <div class="right-image"></div>
     </div>
   </div>
 
