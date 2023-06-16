@@ -9,6 +9,7 @@
       font-family: Arial, sans-serif;
     }
 
+    /* Change this part for the new image you decide will be a good background */
     .parallax-section {
       position: relative;
       height: 800px;
@@ -18,7 +19,7 @@
       background-size: contain;
       background-repeat: no-repeat;
       background-attachment: fixed;
-      opacity:  0;
+      opacity: 0;
     }
 
     .parallax-content {
@@ -41,36 +42,9 @@
       max-width: 800px;
       margin: 0 auto;
       text-align: center;
-    }
-
-    /* Slideshow */
-    .slideshow-container {
-      position: relative;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .slideshow-container .slide {
-      display: none;
-    }
-
-    /* Navigation arrows */
-    .prev, .next {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: auto;
-      padding: 16px;
-      color: white;
-      font-weight: bold;
-      font-size: 20px;
-      cursor: pointer;
-      background-color: rgba(0, 0, 0, 0.5);
-      transition: background-color 0.3s;
-    }
-
-    .prev:hover, .next:hover {
-      background-color: rgba(0, 0, 0, 0.8);
+      background-image: url("pillar.png"); /* Replace with your image file path */
+      background-repeat: repeat-y;
+      background-size: auto 100%;
     }
 
     /* Slide indicators (dots) */
@@ -96,49 +70,14 @@
   </style>
 </head>
 <body>
-  <div class="parallax-section" >
+  <div class="parallax-section">
     <div class="parallax-content">
-      <h1>Welcome to the Parallax Website</h1>
-      <p>Scroll down to see the parallax effect</p>
+      <h1 id="typing-title"></h1>
     </div>
   </div>
 
   <div class="content-section">
     <div class="content">
-      <!-- Slideshow -->
-      <div class="slideshow-container">
-        <div class="slide">
-          <div>
-            <h1>DANIEL</h1>
-            <p>Hello</p>
-            <p>Hello how is it going</p>
-          </div>
-        </div>
-        <div class="slide">
-          <div>
-            <h1>Slide 2</h1>
-            <p>Hello</p>
-          </div>
-        </div>
-        <div class="slide">
-          <div>
-            <h1>Slide 3</h1>
-            <p>Hello</p>
-          </div>
-        </div>
-
-        <!-- Navigation arrows -->
-        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
-        <a class="next" onclick="changeSlide(1)">&#10095;</a>
-      </div>
-
-      <!-- Slide indicators (dots) -->
-      <div class="dot-container">
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-      </div>
-
       <h2>About Us</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ac metus nec lacus congue faucibus. Morbi consectetur leo in tellus tempus pharetra. Nam non enim lectus. Sed efficitur quam vitae lorem convallis, ut tincidunt nulla sagittis. Nam bibendum erat nec tortor interdum congue. Aliquam vulputate velit id metus pharetra, id aliquam enim pellentesque.</p>
       <p>Sed fermentum quam libero, a finibus lorem condimentum a. Donec sed bibendum nisl. Morbi lacinia enim at arcu iaculis, id efficitur velit facilisis. Nam id tellus sit amet libero consectetur pellentesque. Pellentesque cursus tincidunt metus nec suscipit. Aliquam non tellus vitae sapien posuere euismod. Sed hendrerit purus et felis tristique, nec lacinia libero laoreet. Donec bibendum orci sit amet neque scelerisque, vitae interdum dolor tempus. Donec gravida est eget posuere laoreet. Donec ornare efficitur sapien nec pellentesque. Cras vehicula eu lectus vitae dictum. Ut accumsan ante nunc, in tincidunt felis bibendum at. Pellentesque et ipsum mauris. Aliquam varius quam et eros pellentesque, id dapibus quam sagittis.</p>
@@ -146,58 +85,55 @@
   </div>
 
   <script>
-    
-    var backgroundImage = new Image();
-    backgroundImage.src = "earth.jpg"; // Replace with your image file path
-    backgroundImage.onload = function() {
+    var typingTitle = document.getElementById("typing-title");
+    var titles = ["Welcome to the Parallax Website", "Check out our Awesome Features", "Join us Today!"];
+    var currentIndex = 0;
+
+    function typeText(text, callback) {
+      var index = 0;
+      var speed = 100; // Adjust the typing speed here (in milliseconds)
+
+      function typeNextLetter() {
+        if (index < text.length) {
+          typingTitle.textContent += text.charAt(index);
+          index++;
+          setTimeout(typeNextLetter, speed);
+        } else {
+          // Text typing complete
+          if (typeof callback === "function") {
+            setTimeout(callback, 5000); // Wait 5 seconds before typing the next text
+          }
+        }
+      }
+
+      typeNextLetter();
+    }
+
+    function startTypingAnimation() {
+      typingTitle.textContent = "";
+      typeText(titles[currentIndex], function() {
+        currentIndex = (currentIndex + 1) % titles.length; // Move to the next title in a cyclic manner
+        setTimeout(startTypingAnimation, 5000); // Wait 5 seconds before starting the typing animation again
+      });
+    }
+
+    // Trigger the typing animation when the page is loaded
+    window.addEventListener("DOMContentLoaded", function() {
       var parallaxSection = document.querySelector(".parallax-section");
       parallaxSection.style.opacity = "1"; // Show the section after the image is loaded
-    };
+      startTypingAnimation();
+    });
 
-    var slideIndex = 0;
-    showSlides();
+    // Parallax effect
+    window.addEventListener("scroll", function() {
+      var parallaxSection = document.querySelector(".parallax-section");
+      var parallaxEffect = -200; // Initial parallax effect position
 
-    function showSlides() {
-      var slides = document.getElementsByClassName("slide");
-      var dots = document.getElementsByClassName("dot");
+      var scrollTop = window.pageYOffset;
+      parallaxEffect = scrollTop * 0.2; // Adjust the parallax effect speed here
 
-      for (var i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-
-      slideIndex++;
-
-      if (slideIndex > slides.length) {
-        slideIndex = 1;
-      }
-
-      for (var i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      }
-
-      slides[slideIndex - 1].style.display = "block";
-      dots[slideIndex - 1].className += " active";
-
-      setTimeout(showSlides, 3000);
-    }
-
-    function changeSlide(n) {
-      showSlides(slideIndex += n);
-    }
-
-// Parallax effect
-window.addEventListener("DOMContentLoaded", function() {
-  var parallaxSection = document.querySelector(".parallax-section");
-  var parallaxEffect = -200; // Initial parallax effect position
-
-  window.addEventListener("scroll", function() {
-    var scrollTop = window.pageYOffset;
-    parallaxEffect = scrollTop * 0.2; // Adjust the parallax effect speed here
-
-    parallaxSection.style.backgroundPosition = "center " + (parallaxEffect * -1) + "px";
-  });
-});
-
+      parallaxSection.style.backgroundPosition = "center " + (parallaxEffect * -1) + "px";
+    });
   </script>
 </body>
 </html>
