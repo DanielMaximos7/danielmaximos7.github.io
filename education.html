@@ -11,12 +11,13 @@
 
     .parallax-section {
       position: relative;
-      height: 500px;
+      height: 250vh;
       overflow: hidden;
       background-image: url("earth.jpg"); /* Replace with your image file path */
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
+      background-attachment: fixed;
     }
 
     .parallax-content {
@@ -91,10 +92,6 @@
     .dot.active {
       background-color: rgba(0, 0, 0, 0.8);
     }
-    
-
-
-
   </style>
 </head>
 <body>
@@ -179,19 +176,18 @@
       showSlides(slideIndex += n);
     }
 
-// Parallax effect
-window.addEventListener("DOMContentLoaded", function() {
-  var parallaxSection = document.querySelector(".parallax-section");
-  var parallaxEffect = 0; // Initial parallax effect position
+    // Parallax effect
+    window.addEventListener("DOMContentLoaded", function() {
+      var parallaxSection = document.querySelector(".parallax-section");
+      var parallaxEffect = 0; // Initial parallax effect position
 
-  window.addEventListener("scroll", function() {
-    var scrollTop = window.pageYOffset;
-    parallaxEffect = scrollTop * 0.4; // Adjust the parallax effect speed here
+      window.addEventListener("scroll", function() {
+        var scrollTop = window.pageYOffset;
+        parallaxEffect = scrollTop * 0.2; // Adjust the parallax effect speed here
 
-    parallaxSection.style.backgroundPositionY = (parallaxEffect * -1) + "px";
-  });
-});
-
+        parallaxSection.style.backgroundPositionY = (parallaxEffect * -1) + "px";
+      });
+    });
   </script>
 </body>
 </html>
